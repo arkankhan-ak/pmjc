@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+
+        <record id="form_project_task" model="ir.ui.view">
+            <field name="name">form.project.task</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"></field>
+            <field name="arch" type="xml" >
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="created_date"></field>
+                    <field name="created_by_id"></field>
+                    <field name="changed_date"></field>
+                    <field name="changed_by_id"></field>
+                    <field name="parent_task_id"></field>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="azure_id"></field>
+                    <field name="areapath"></field>
+                    <field name="interation_path"></field>
+                    <field name="state"></field>
+                    <field name="reason"></field>
+                    <field name="type"></field>
+                    <field name="remaining_work_hour"></field>
+                    <field name="original_estimate_hour"></field>
+                    <field name="complete_work_hour"></field>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='extra_info']" position="after">
+                    <page string="Task">
+                        <field name="child_ids"></field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="workitem_list_view" model="ir.ui.view">
+            <field name="name">workitems.list.view</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="azure_id"></field>
+                    <field name="areapath"></field>
+                    <field name="project_id"></field>
+                    <field name="interation_path"></field>
+                    <field name="state"></field>
+                    <field name="reason"></field>
+                    <field name="created_date"></field>
+                    <field name="created_by_id"></field>
+                    <field name="changed_date"></field>
+                    <field name="changed_by_id"></field>
+                    <field name="title"></field>
+                    <field name="priority"></field>
+                    <field name="active"></field>
+                    <field name="parent_task_id"></field>
+                    <field name="child_ids"></field>
+                    <field name="type"></field>
+                    <field name="remaining_work_hour"></field>
+                    <field name="original_estimate_hour"></field>
+                    <field name="complete_work_hour"></field>
+
+                </tree>
+            </field>
+        </record>
+
+
+
+	<!--project.action_view_task-->
+
+    </data>
+</odoo>
+
+
+

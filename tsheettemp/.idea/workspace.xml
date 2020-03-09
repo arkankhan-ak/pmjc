@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98f63b4b-ba1c-4a32-9021-a214f3b66363" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="tsheettemp" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1Y6bss9iLNYADk5uhKY7HmUJnNX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pmjc" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+  </component>
+  <component name="RunManager" selected="Python.workitem_from_azure">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="tsheettemp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tsheettemp" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="tsheettemp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="workitem_from_azure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="tsheettemp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/workitem_from_azure.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.tsheettemp" />
+      <item itemvalue="Python.workitem_from_azure" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.workitem_from_azure" />
+        <item itemvalue="Python.__init__" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98f63b4b-ba1c-4a32-9021-a214f3b66363" name="Default Changelist" comment="" />
+      <created>1582266200033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582266200033</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="141" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582289890075">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="141" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1582289890075" />
+    <state x="416" y="126" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582883010075">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="416" y="126" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.702@0.27.1366.702" timestamp="1582883010075" />
+    <state x="466" y="147" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583214474278">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="466" y="147" key="FileChooserDialogImpl/0.27.1366.702@0.27.1366.702" timestamp="1583214474278" />
+    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1582289883800" />
+    <state width="1343" height="188" key="GridCell.Tab.0.bottom" timestamp="1582896612912">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1343" height="188" key="GridCell.Tab.0.bottom/0.27.1366.702@0.27.1366.702" timestamp="1582896612912" />
+    <state width="1343" height="175" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1582291346001" />
+    <state width="1343" height="188" key="GridCell.Tab.0.center" timestamp="1582896612912">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1343" height="188" key="GridCell.Tab.0.center/0.27.1366.702@0.27.1366.702" timestamp="1582896612912" />
+    <state width="1343" height="175" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1582291346000" />
+    <state width="1343" height="188" key="GridCell.Tab.0.left" timestamp="1582896612912">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1343" height="188" key="GridCell.Tab.0.left/0.27.1366.702@0.27.1366.702" timestamp="1582896612912" />
+    <state width="1343" height="175" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1582291346000" />
+    <state width="1343" height="188" key="GridCell.Tab.0.right" timestamp="1582896612912">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1343" height="188" key="GridCell.Tab.0.right/0.27.1366.702@0.27.1366.702" timestamp="1582896612912" />
+    <state width="1343" height="175" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1582291346001" />
+    <state x="91" y="27" width="1012" height="702" key="SettingsEditor" timestamp="1582803424524">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="91" y="27" width="1012" height="702" key="SettingsEditor/0.27.1366.702@0.27.1366.702" timestamp="1582803424524" />
+    <state x="339" y="214" key="com.intellij.ide.util.TipDialog" timestamp="1583469601106">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="339" y="214" key="com.intellij.ide.util.TipDialog/0.27.1366.702@0.27.1366.702" timestamp="1583469601106" />
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1582519071900" />
+    <state x="279" y="45" width="863" height="642" key="find.popup" timestamp="1583411428899">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="279" y="45" width="863" height="642" key="find.popup/0.27.1366.702@0.27.1366.702" timestamp="1583411428899" />
+    <state x="346" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1583310025748">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="346" y="50" width="672" height="678" key="search.everywhere.popup/0.27.1366.702@0.27.1366.702" timestamp="1583310025748" />
+    <state x="408" y="309" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1582266464846">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="408" y="309" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1366.741@0.27.1366.741" timestamp="1582266464846" />
+  </component>
+</project>

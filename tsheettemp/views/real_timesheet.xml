@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="real_timesheet_view_tree" model="ir.ui.view">
+           <field name="name">real_timesheet_view_tree</field>
+           <field name="model">project.mytimesheet</field>
+           <field name="arch" type="xml">
+               <tree string="real_timesheet_tree">
+                   <field name="emp_name"/>
+                   <field name="t_id"/>
+                   <field name="work_item_ids"/>
+<!--                   <field name="remaining_hour"/>-->
+               </tree>
+           </field>
+       </record>
+        <record id="real_timesheet_view_form" model="ir.ui.view">
+            <field name="name">real_timesheet_view_form</field>
+            <field name="model">project.mytimesheet</field>
+            <field name="arch" type="xml">
+                <form string="real_timesheet_form">
+                    <sheet>
+                        <group>
+                            <field name="emp_name"/>
+                            <field name="work_item_ids">
+                                <tree>
+                                    <field name="assigned_to"/>
+
+                                </tree>
+                            </field>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="real_timesheet_action" model="ir.actions.act_window">
+            <field name="name">Real TImesheet Action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.mytimesheet</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="real_timesheet_categ" name="Real-Timesheet" parent="forecast_root" action="real_timesheet_action" sequence=""/>
+    </data>
+</odoo>

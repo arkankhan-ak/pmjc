@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="forecast_view_tree" model="ir.ui.view">
+            <field name="name">forecast_view_tree</field>
+            <field name="model">project.forecasting</field>
+            <field name="arch" type="xml">
+                <tree string="forecast_tree" editable="bottom">
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="employee_name"/>
+                    <field name="billing_percentage"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="forecast_action" model="ir.actions.act_window">
+            <field name="name">Forecast Input</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.forecasting</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="forecast_output_action" model="ir.actions.server">
+            <field name="model_id" ref="model_project_forecastoutput"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.test_function()
+            </field>
+            <field name="name">Forecast For Temp</field>
+        </record>
+
+        <record id="timesheet_entry_server_action" model="ir.actions.server">
+            <field name="model_id" ref="model_project_myworkitem"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = model._make_timesheet_entry()
+            </field>
+            <field name="name">Timesheet Enrty</field>
+        </record>
+
+        <menuitem id="forecast_root" name="Forecasting" sequence=""/>
+        <menuitem id="forecast_input_menu" name="Forecast Input" parent="forecast_root" action="forecast_action" />
+        <menuitem id="forecast_output_menu" name="Forecast Generation" parent="forecast_root" action="forecast_output_action" />
+        <menuitem id="timesheet_entry_menu" name="Timesheet Record Generation" parent="forecast_root" action="timesheet_entry_server_action" />
+    </data>
+</odoo>

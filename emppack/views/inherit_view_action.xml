@@ -1,0 +1,157 @@
+<odoo>
+	<data>
+		<record id="account.action_invoice_tree1" model="ir.actions.act_window">
+            <field name="name">Customers Inherited Invoices</field>
+            <field name="view_mode">kanban,tree,form,calendar,pivot,graph</field>
+        </record>
+        
+        <record id="account.invoice_my_kanban1" model="ir.actions.act_window.view">
+		    <field eval="0" name="sequence"/>
+		    <field name="view_mode">kanban</field>
+		    <field name="view_id" ref="account.invoice_kanban"/>
+	    	<field name="act_window_id" ref="account.action_invoice_tree1"/>
+		</record>
+		
+
+		<record id="hr_holiday_status_custom_tree_view" model="ir.ui.view">
+            <field name="name">hr.holiday.status.custom.tree.view</field>
+            <field name="model">hr.holidays.status</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_status_normal_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='limit']" position="after">
+                	<field name="is_optional" widget="checkbox" groups="hr.group_hr_manager"/>
+                </xpath>
+            </field>
+        </record>   
+		
+		<record id="hr_holiday_status_custom_form_view" model="ir.ui.view">
+            <field name="name">hr.holiday.status.custom.form.view</field>
+            <field name="model">hr.holidays.status</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                	<field name="is_optional" widget="checkbox"/>
+                </xpath>
+            </field>
+        </record>
+		
+		<record id="view_hr_holidays_filter_new" model="ir.ui.view">
+            <field name="name">hr.holidays.filter.new</field>
+            <field name="model">hr.holidays</field>
+            <field name="arch" type="xml">
+                <search string="Search Leave">
+                    <field name="name"/>
+                    <filter domain="[('state','in',('confirm','validate1'))]" string="To Approve" name="approve"/>
+                    <filter string="Approved Leaves" domain="[('state', '=', 'validate')]" name="validated"/>
+                    <filter name="year" string="Current Year"
+                        domain="[('holiday_status_id.active', '=', True)]" help="Active Leaves and Allocations"/>
+                    <filter string="My Requests" name="my_leaves" domain="[('user_id', '=', uid)]"/>
+                </search>
+            </field>
+        </record>
+		
+		<record id="hr_holidays.open_department_holidays_approve" model="ir.actions.act_window">
+			<field name="search_view_id" ref="view_hr_holidays_filter_new"/>
+		</record>
+		
+		<record id="hr_holidays.open_department_holidays_allocation_approve" model="ir.actions.act_window">
+			<field name="context">{}</field>
+		</record>
+		
+		
+		
+		<record id="hr_holidays.open_ask_holidays" model="ir.actions.act_window">
+			<field name="context">{}</field>
+			<field name="view_mode">tree,calendar</field>
+		</record>
+		
+		<record id="hr_holidays.action_open_ask_holidays_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+        </record>
+
+		<record id="hr_holidays.action_open_ask_holidays_calendar" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">calendar</field>
+        </record>
+		
+		
+		<record id="new_product_product_action" model="ir.actions.act_window">
+	        <field name="inherit_id" ref="product.product_normal_action_sell"/>
+	        <field name="res_model">product.product</field>
+	        <field name="name">Product Variant</field>
+	    </record>
+		<!-- action is not getting called here  -->
+		
+		
+		
+		<record id="hr_employee_customised_view" model="ir.ui.view">
+            <field name="name">hr.employee.customised.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]" position="after">
+               	  <page name="employee_employement_information" string="Employement Information">
+				    <group>
+				      <field name="job_type"/>
+				      <field name="take_lunch_from_office" widget="checkbox"/>
+				      <field name="joining_date" widget="date"/>
+				      <field name="employement_date" widget="date"/>
+				      
+				      <field name="is_optional_leave_proceed" widget="checkbox"/>
+				      <field name="is_mendatory_leave_proceed" widget="checkbox"/>
+				      
+				    </group>
+				  </page>
+                </xpath>
+            </field>
+        </record>
+		
+		
+		<menuitem id="sale.menu_products" 
+		action="new_product_product_action" 
+		active="True"
+		parent="sale.product_menu_catalog"/>
+		
+		<menuitem name="Leaves To Approve" 
+            id="leave_to_approve_menu"
+            parent=""
+            action="hr_holidays.action_hr_holidays_dashboard"
+            sequence="96"
+            groups="emppack.main_manager_group"
+        />
+		<menuitem 
+			name="Company Leaves"
+			id="menu_hr_holidays_root"
+			action="hr_holidays.open_department_holidays_approve"
+			parent="leave_to_approve_menu"
+		/>
+		<menuitem 
+			name="Leave Allocation"
+			id="menu_open_department_leave_approve"
+			action="hr_holidays.open_department_holidays_allocation_approve"
+			parent="leave_to_approve_menu"
+		/>
+		
+		
+		 <menuitem
+            name="Company Details"
+            id="hr.menu_open_view_employee_list_my"
+            parent="hr.menu_hr_root"
+            groups="hr.group_hr_user"
+            sequence="3"/>
+		
+		
+		
+		 <menuitem
+            id="hr.menu_hr_department_tree"
+            name="Department"
+            parent="hr.menu_open_view_employee_list_my"
+            />
+		<menuitem
+            id="hr.menu_view_hr_job"
+            name="Job Position"
+            parent="hr.menu_open_view_employee_list_my"
+             />
+	</data>
+</odoo>

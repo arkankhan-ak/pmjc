@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="subject_view_form" model="ir.ui.view" >
+        <field name="name">subject.view</field>
+        <field name="model">subject.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="subject_name" />
+                    <field name="credit" />
+                </sheet>
+            </form>
+        </field>
+        </record>
+
+        <record id="subject_tree_view" model="ir.ui.view">
+        <field name="name">subject.view</field>
+        <field name="model">subject.details</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                    <field name="subject_name" />
+                    <field name="credit" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="subject_action">
+            <field name="name">subjects</field>
+            <field name="res_model">subject.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

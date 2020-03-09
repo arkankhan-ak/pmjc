@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+    <record id="view_others_tree" model="ir.ui.view">
+      <field name="name">pmjc.other.tree</field>
+      <field name="model">pmjc.other</field>
+      <field name="priority">1</field>
+      <field name="arch" type="xml">
+        <tree string="Others" editable="bottom">
+            <field name="name"/>
+            <field name="date"/>
+            <field name="description"/>
+            <field name="amount"/>
+           
+        </tree>
+      </field>
+    </record>
+    <!-- milestone form view -->
+    <!-- <record id="view_others_form" model="ir.ui.view">
+      <field name="name">pmjc.others.form</field>
+      <field name="model">pmjc.other</field>
+      <field name="priority">20</field>
+      <field name="arch" type="xml">
+          <form string="other">
+            <sheet>
+              <group>   
+                <group string="other">
+                    <field string="Name" name="name" />
+                    <field  string="Date" name="date"/>
+                    <field string="Description" name="description"/>
+                    <field string="Amount " name="amount"/>
+                </group>
+              </group>
+            </sheet>
+          </form>
+      </field>
+    </record> -->
+  <!-- Milestone search view -->
+   <record id="view_pmjc_other_search" model="ir.ui.view">
+      <field name="name">pmjc.others.search</field>
+      <field name="model">pmjc.other</field>
+      <field name="arch" type="xml">
+        <search string="other">
+                    <field name="name" filter_domain="[('name','ilike',self)]" string="Others"/>
+                </search>
+      </field>
+    </record>
+
+
+    <!-- Action for Others -->
+    <record model="ir.actions.act_window" id="action_view_pmjc_other">
+      <field name="name">PMJC Others</field>
+      <field name="res_model">pmjc.other</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <!-- Menu item for Milestone -->
+    <menuitem id="pmjc_milestone_menu" parent="main_menu" name="Others" 
+          action="action_view_pmjc_other" sequence="4"/>
+    </data>
+</odoo>

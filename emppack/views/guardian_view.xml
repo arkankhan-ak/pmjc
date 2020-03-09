@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="guardian_view" model="ir.ui.view">
+            <field name="name">guardian.view</field>
+            <field name="model">guardian.detail</field>
+            <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <field name="name" string="name"/>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="city"/>
+                            <field name="state"/>
+                            <field name="country"/>
+                            <field name="zipcode"/>
+                        </sheet>
+                    </form>
+            </field>
+        </record>
+
+        <!-- tree view -->
+         <record id="guardian_tree_view" model="ir.ui.view">
+           <field name="name">guardian.view</field>
+            <field name="model">guardian.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="city"/>
+                    <field name="state"/>
+                    <field name="country"/>
+                    <field name="zipcode"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- tree view ends -->
+
+        <!--        action for guardian-->
+         <record model="ir.actions.act_window" id="guardian_view_action">
+            <field name="name">Guardian</field>
+            <field name="res_model">guardian.detail</field>
+             <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        
+
+    </data>
+</odoo>

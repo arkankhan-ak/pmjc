@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <record id="workitem_form_view" model="ir.ui.view">
+            <field name="name">workitems.form.view</field>
+            <field name="model">project.myworkitem</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="azure_id"></field>
+                                <field name="areapath"></field>
+                                <field name="project"></field>
+                                <field name="interation_path"></field>
+                                <field name="state"></field>
+                                <field name="reason"></field>
+                            </group>
+                            <group>
+                                <field name="assigned_to"></field>
+                                <field name="created_date"></field>
+                                <field name="created_by"></field>
+                                <field name="changed_date"></field>
+                                <field name="changed_by"></field>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="title"></field>
+                                <field name="priority"></field>
+                                <field name="active"></field>
+<!--                                <field name="parent_id"></field>-->
+                                <field name="child_ids" widget="many2many_checkboxes"/>
+                                <!--                                <field name="child_ids">-->
+<!--                                    <tree>-->
+<!--                                        <field name="azure_id"></field>-->
+<!--                                        <field name="title"></field>-->
+<!--                                        <field name="assigned_to"></field>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+                            </group>
+                            <group>
+                                <field name="type"></field>
+                                <field name="remaining_work_hour"></field>
+                                <field name="original_estimate_hour"></field>
+                                <field name="complete_work_hour"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="workitem_list_view" model="ir.ui.view">
+            <field name="name">workitems.list.view</field>
+            <field name="model">project.myworkitem</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="azure_id"></field>
+                    <field name="areapath"></field>
+                    <field name="project"></field>
+                    <field name="interation_path"></field>
+                    <field name="state"></field>
+                    <field name="reason"></field>
+                    <field name="assigned_to"></field>
+                    <field name="created_date"></field>
+                    <field name="created_by"></field>
+                    <field name="changed_date"></field>
+                    <field name="changed_by"></field>
+                    <field name="title"></field>
+                    <field name="priority"></field>
+                    <field name="active"></field>
+<!--                    <field name="parent_id"></field>-->
+                    <field name="child_ids"></field>
+                    <field name="type"></field>
+                    <field name="remaining_work_hour"></field>
+                    <field name="original_estimate_hour"></field>
+                    <field name="complete_work_hour"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="workitem_view_action" model="ir.actions.act_window">
+            <field name="name">workitems.view.action</field>
+            <field name="res_model">project.myworkitem</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="workitem_view_action" name="Workitems" id="project_workitem_action" parent="forecast_root" />
+    </data>
+</odoo>

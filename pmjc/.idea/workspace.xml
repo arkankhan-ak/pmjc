@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d75f5728-4258-4c31-9c6e-02bb9e9f95eb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1YbbvzVHFbLOoCgSxtEnfOrOaZ2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d75f5728-4258-4c31-9c6e-02bb9e9f95eb" name="Default Changelist" comment="" />
+      <created>1583214475600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583214475600</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="339" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1583296586246">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="339" y="204" key="com.intellij.ide.util.TipDialog/0.27.1366.702@0.27.1366.702" timestamp="1583296586246" />
+    <state x="331" y="89" width="704" height="576" key="find.popup" timestamp="1583230258080">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="331" y="89" width="704" height="576" key="find.popup/0.27.1366.702@0.27.1366.702" timestamp="1583230258080" />
+    <state x="346" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1583219009690">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="346" y="50" width="672" height="678" key="search.everywhere.popup/0.27.1366.702@0.27.1366.702" timestamp="1583219009690" />
+  </component>
+</project>

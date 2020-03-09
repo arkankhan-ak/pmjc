@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <record id="student_view_form" model="ir.ui.view" >
+        <field name="name">student.view</field>
+        <field name="model">student.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="name" />
+                    <field name="behaviourRating" />
+                    <!-- <field name="behaviourRating" widget="percentpie"/> -->
+                    <field name="rollNumber" widget="integer"/>
+                    <field name="classroom_id" />
+                    <!-- <field name="studentYearStatus" widget="statusbar"/> -->
+                    <field name="subject_ids" widget="many2many_checkboxes"/>
+                    <field name="seq"/>
+                    <field name="monthly_progres"  />
+                    <field name="status" widget="selection" />
+
+                    <!-- <field name="status" widget="priority" /> -->
+                    <field name="gender" widget="radio" />
+                    <field name="average_present_time" />
+                    <field name="student_profile_pic"/>
+                    <field name="student_email" />
+                    <field name="student_phone"/>
+                    <field name="student_website" />
+                    <field name="dob" widget="date" />
+                    <field name="your_code" widget="html" />
+                    <field name = "is_active_student" widget="boolean_button" />
+                </sheet>
+            </form>
+        </field>
+        </record>
+
+        
+        <record id="student_tree_view" model="ir.ui.view">
+        <field name="name">student.view</field>
+        <field name="model">student.details</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                    <field name="seq" widget="handle" />
+                    <field name="name" />
+                    <field name="behaviourRating" />
+                    <field name="rollNumber" />
+                    <field name="classroom_id" />
+                    <!-- <field name="studentYearStatus" /> -->
+                    <field name="subject_ids" widget="many2many_tags"/>
+                    <field name="monthly_progres"  widget="progressbar"/>
+                    <!-- <field name="status" />
+                    <field name="average_present_time" widget="float_time"/>
+                    <field name="student_profile_pic" widget="image" /> -->
+                    <field name="student_email"  widget="email" />
+                    <field name="student_phone" widget="phone" />
+                    <field name="student_website" widget="url" />
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="student_action">
+            <field name="name">Student</field>
+            <field name="res_model">student.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

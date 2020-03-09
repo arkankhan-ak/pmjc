@@ -1,0 +1,33 @@
+<template id="work_items_page" name="Work Item Details">
+    <t t-call="website.layout">
+     <div class="oe_structure">
+       <div class="container">
+         <br />
+         <center><h3>Work Item Details</h3></center>
+         <br />
+           <table class="table-striped table">
+             <thead style="font-size: 23px;">
+             <tr>
+               <h6>
+                 <b>
+                   <th>title</th>
+                   <th>description</th>
+                   <th>type</th>
+                 </b>
+               </h6>
+             </tr>
+             </thead>
+             <tbody>
+               <t t-foreach="work_items" t-as="workitem">
+               <tr>
+               <td><span t-esc="workitem.title"/></td>
+               <td><span t-esc="workitem.description"/></td>
+               <td><span t-esc="workitem.type"/></td>
+               </tr>
+               </t>
+             </tbody>
+           </table>
+       </div>
+     </div>
+ </t>
+</template>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a282f85c-4521-499d-a68e-3ec586ecf5ad" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1W9FiMciTPbeEKuvatoXXyV2x8e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="settings.editor.selected.configurable" value="com.github.izhangzhihao.rainbow.brackets.settings.RainbowConfigurable" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a282f85c-4521-499d-a68e-3ec586ecf5ad" name="Default Changelist" comment="" />
+      <created>1578554029860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578554029860</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="311" y="58" width="800" height="677" key="#Plugins" timestamp="1580365062913">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="311" y="58" width="800" height="677" key="#Plugins/67.27.1299.741@67.27.1299.741" timestamp="1580365062913" />
+    <state x="174" y="54" width="1084" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578555107373">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="174" y="54" width="1084" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1578555107373" />
+    <state x="453" y="174" width="515" height="472" key="EnvironmentVariablesDialog" timestamp="1578555097002">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="453" y="174" width="515" height="472" key="EnvironmentVariablesDialog/67.27.1299.741@67.27.1299.741" timestamp="1578555097002" />
+    <state x="454" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582265671721">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="454" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1582265671721" />
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1580468547986" />
+    <state x="75" y="38" key="SettingsEditor" timestamp="1580793697234">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="75" y="38" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1580793697234" />
+    <state x="138" y="38" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1580364988973" />
+    <state x="321" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1582606928064">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="321" y="215" key="com.intellij.ide.util.TipDialog/0.27.1366.702@0.27.1366.702" timestamp="1582606928064" />
+    <state x="321" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1582259741165" />
+    <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1580791011738" />
+    <state x="121" y="27" width="747" height="702" key="find.popup" timestamp="1582696223100">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="121" y="27" width="747" height="702" key="find.popup/0.27.1366.702@0.27.1366.702" timestamp="1582696223100" />
+    <state x="182" y="27" width="710" height="741" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1580791215807" />
+    <state x="329" y="42" width="707" height="676" key="search.everywhere.popup" timestamp="1580793667895">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="329" y="42" width="707" height="676" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1580793667895" />
+    <state x="380" y="42" width="672" height="676" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1580447426769" />
+  </component>
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="inherted_invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"></field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page[1]/field[@name='invoice_line_ids']/tree" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']" position="inside">
+                    <form string="Invoice Line New Form" name="New Form">
+                        <group>
+
+                            <field name="invoice_by" default="by_expense"/>
+                            <field name="expense_ids" attrs="{'invisible':[('invoice_by', '=', 'by_workitem')]}" />
+<!--                            <field name="workitem_ids" widget="one2many_list" attrs="{'invisible':[('invoice_by', '=', 'by_expense')]}"/>-->
+                            <field name="line_subtotal" string="Subtotal:"/>
+
+                        </group>
+                    </form>
+                </xpath>
+            </field>
+        </record>
+<!--         Inherit Form View to Modify it-->
+<!--        <record id="inherited_invoice_line_form" model="ir.ui.view">-->
+<!--            <field name="name">account.invoice.form</field>-->
+<!--            <field name="model">account.invoice</field>-->
+<!--            <field name="inherit_id" ref="account.invoice_form"/>-->
+<!--             <field name="arch" type="xml">-->
+<!--                <xpath expr="//notebook/page[1]/field[@name='invoice_line_ids']" position="after">-->
+<!--                    <field string="Expense" name="expense_ids" />-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

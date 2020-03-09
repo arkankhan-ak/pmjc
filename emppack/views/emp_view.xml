@@ -1,0 +1,539 @@
+<odoo>
+    <data>
+
+        <!-- certificate start -->
+<!--         <record id="employee_certificate_form_view" model="ir.ui.view"> -->
+<!--             <field name="name">employee.certificate</field> -->
+<!--             <field name="model">employee.certificate</field> -->
+<!--             <field name="arch" type="xml"> -->
+<!--                	<div class="oe_button_box" name="button_box"> -->
+<!-- 	                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" > -->
+<!-- 	                    <field name="active" widget="boolean_button" options='{"terminology": "archive"}' /> -->
+<!-- 	                </button> -->
+<!--                 </div> -->
+<!--                 <form> -->
+<!--                     <field name="certificate"/> -->
+<!--                     <field name="c_type"/> -->
+<!--                     <field name="employee_id" context="{'form_view_ref': 'emppack.employee_form_view_second'}"/> -->
+<!--                 </form> -->
+<!--             </field> -->
+<!--         </record>    -->
+
+
+        <record id="employee_certificate_tree" model="ir.ui.view">
+            <field name="name">employee.certificate</field>
+            <field name="model">employee.certificate</field>
+            <field name="arch" type="xml">
+                <tree string="Medium" delete="true">
+                    <field name="employee_id"/>
+                    <field name="c_type"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="employee_certificate_tree_second" model="ir.ui.view">
+            <field name="name">employee.certificate</field>
+            <field name="model">employee.certificate</field>
+            <field name="arch" type="xml">
+                <tree string="Medium" delete="true">
+                    <!-- c_type is name of certificate -->
+                    <field name="c_type"/>
+                    
+                </tree>
+            </field>
+            
+        </record>
+        <record id="view_certificate_search" model="ir.ui.view">
+            <field name="name">employee.certificate</field>
+            <field name="model">employee.certificate</field>
+            <field name="arch" type="xml">
+                <search string="Search Certificate">
+                    <field name="employee_id"/>
+                <separator/>             
+                </search>
+            </field>
+        </record>
+        
+        <record id="view_archived_certificate_search" model="ir.ui.view">
+            <field name="name">employee.certificate</field>
+            <field name="model">employee.certificate</field>
+            <field name="arch" type="xml">
+                <search string="Search Archived Certificate">
+                	<field name="employee_id"/>
+                	<separator/>
+                    <filter name="active" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+        <!--  -->
+		
+		
+		
+		<record model="ir.actions.act_window" id="action_employee_archive_total_certificate">
+            <field name="name">certificate2</field>
+            <field name="res_model">employee.certificate</field>
+            <field name="search_view_id" ref="view_archived_certificate_search" />
+            <field name="context">{'search_default_employee_id': active_id, 'default_employee_id': active_id,'search_default_active': 1}</field>
+            <field name="view_mode">tree</field>
+        </record>
+         <record model="ir.actions.act_window" id="emplopyee_certificate_action_second">
+            <field name="view_id" ref="employee_certificate_tree_second" />
+            <field name="name">certificate</field>
+            <field name="res_model">employee.certificate</field>
+            <field name="context">{'search_default_employee_id': active_id, 'default_employee_id': active_id}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="emplopyee_certificate_action">
+            <field name="name">certificate</field>
+            <field name="res_model">employee.certificate</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+       
+
+       
+         
+        <!-- certificate ends -->
+
+         <record id="emp_view" model="ir.ui.view">
+            <field name="name">employee.view</field>
+            <field name="model">employee.detail</field>
+            <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                        	<div class="oe_button_box" name="button_box">
+		                        <button name="%(action_employee_archive_total_certificate)d"
+		                         type="action" 
+		                         class="oe_stat_button" 
+		                         icon="fa-archive" >
+		                            <field name="archive_certificate_count" widget="statinfo" string="Archived Certificate"/>
+		                        </button>
+		                        
+		                        <button
+                                    name="%(emplopyee_certificate_action_second)d"
+                                    icon="fa-certificate"
+                                    type="action">
+                                    	<field name="docs_count" widget="statinfo" string="All certificate"/>
+                                    </button>
+		                    </div>
+                            <group>
+                                <group>
+                                   
+                                    <field name="profile_pic" widget="image"/>
+                                    <field name="first_name"/>
+                                    <field name="middle_name"/>
+                                    <field name="last_name"/>
+                                    <field name="dob"/>
+                                    <field name="contact_number"/>
+                                    <field name="date_of_joining"/>
+                                    <field name="status"/>
+                                    <field name="computed_name" />
+                                    <field name="alise_name" />
+                                    <field name="short_code" />
+                                    <field name="hobby_code" />
+                                    <field name="first_guardian_address"/>
+                                    <field name="second_guardian_address"/>
+                             		<field name="user_list"/>
+                             		<field name="country"/>
+                                    <field name="wage" groups="emppack.ceo_group,emppack.main_manager_group"/>
+                                    <field name="wages_type"/>
+                                    <field name="Wages_or_salary"/>
+                                    <field name="gender" widget="radio"/> 
+                                    <field name="hobbies" widget="many2many_tags"/>
+                                    <field name="guardian_ids" widget="many2many_tags"/>
+                                    <field name="job_position"/>
+                                    <field name = "matching_hobbies" widget="selection"/>
+                                    <button name="toggle_start" type="object" icon="fa-check" class="oe_stat_button">
+									    <field name="toggle_active" widget="boolean_button"
+									        options='{"terminology": {
+									                "string_true": "",
+									                "hover_true": "RemoveHobby",
+									                "string_false": "",
+									                "hover_false": "GetHobby"
+									            }}'/>
+									</button>
+                                    
+                                </group>
+                                <field name="certificate"/>
+                                
+                            </group>
+                        </sheet>
+                        <div class="oe_chatter">
+		                    <field name="message_follower_ids" widget="mail_followers"/>
+		                    <field name="message_ids" widget="mail_thread"/>
+		                </div>
+                    </form> 
+              
+            </field>
+        </record>
+
+        <record id="employee_tree_view" model="ir.ui.view">
+            <field name="name">employee.view</field>
+           <field name="model">employee.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                        <field name="first_name"/>
+                        <field name="middle_name"/>
+                        <field name="last_name"/>
+                        <field name="alise_name"/>
+                        <field name="wage" groups="emppack.ceo_group,emppack.main_manager_group"/>
+                        <field name="dob"/>
+                        <field name="guardian_ids" widget="many2many_tags"/>
+                        <field name="contact_number"/>
+                        <field name="date_of_joining"/>
+                        <field name="hobbies" widget="many2many_tags"/>
+                        <field name="wages_type"/>
+                        <field name="status" />
+                        <field name="Wages_or_salary"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- emp form without image -->
+
+            <record id="employee_form_view_second" model="ir.ui.view">
+            <field name="name">employee.view</field>
+            <field name="model">employee.detail</field>
+            <field name="arch" type="xml">
+                    <form>
+
+                        <sheet>
+                        	<div class="oe_button_box" name="button_box">
+		                        <button name="action_view_total_docs" type="object" class="oe_stat_button" icon="fa-certificate" attrs="{'invisible': [('docs_count', '=', 0)]}">
+		                            <field name="docs_count" widget="statinfo" string="Certificate"/>
+		                        </button>
+		                        <button name="action_archive_total_certificate" type="object" class="oe_stat_button" icon="fa-archive" attrs="{'invisible': [('archive_certificate_count', '=', 0)]}">
+		                            <field name="archive_certificate_count" widget="statinfo" string="Certificate"/>
+		                        </button>
+		                    </div>
+                            <group>
+                                <group>
+                                   
+                                    <field name="first_name"/>
+                        			<field name="middle_name"/>                               
+                                    <field name="last_name"/>
+                                    <field name="alise_name"/>
+                                    <field name="dob"/>
+                                    <field name="contact_number"/>
+                                    <field name="date_of_joining"/>
+                                    <field name="status"/>
+                                    <field name="short_code" />
+
+                                    <field name="wage" groups="emppack.ceo_group,emppack.main_manager_group"/>
+                                    <field name="wages_type"/>
+                                    <field name="Wages_or_salary"/>
+                                    <field name="gender" widget="radio"/> 
+                                    <field name="hobbies" widget="many2many_tags"/>
+                                    <field name="guardian_ids" widget="many2many_tags"/>
+                                    <field name="job_position"/>
+                                    <button string="see all certificates"
+                                    name="%(emplopyee_certificate_action_second)d"
+                                    type="action" context="{'search_default_employee_id': active_id, 'default_employee_id': active_id}"/>
+                                </group>
+                                <!-- <field name="certificate"/> -->
+                            </group>
+                        </sheet>
+                    </form> 
+              
+            </field>
+        </record>
+        
+		
+        <record id="employee_tree_view" model="ir.ui.view">
+            <field name="name">employee.view</field>
+           <field name="model">employee.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                        <field name="first_name"/>
+						<field name="middle_name"/>
+                        <field name="last_name"/>
+                        <field name="alise_name"/>
+                        <field name="dob"/>
+                        <field name="guardian_ids" widget="many2many_tags"/>
+                        <field name="wage" groups="emppack.ceo_group,emppack.main_manager_group"/>
+                        <field name="contact_number"/>
+                        <field name="date_of_joining"/>
+                        <field name="hobbies" widget="many2many_tags"/>
+                        <field name="wages_type"/>
+                        <field name="status" />
+                        <field name="short_code" />
+                        <field name="Wages_or_salary"/>
+                </tree>
+            </field>
+        </record>
+        <!--  -->
+        <!-- kanban starts  -->
+        <record id="view_employee_kanban" model="ir.ui.view">
+            <field name="name">employee.view</field>
+           <field name="model">employee.detail</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="first_name"/>
+                    <field name="id"/>
+                    <field name="hobbies"/>
+                    <field name="dob"/>
+                    <field name="status" />
+                    <field name="wage" groups="emppack.ceo_group,emppack.main_manager_group"/>
+                    <field name="profile_pic" widget="image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                        
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <field name="profile_pic" widget="image" />
+                                        </td>
+                                        <td>
+                                            <!-- <img t-att-src="kanban_image('emppack.detail', 'profile_pic', record.profile_pic.raw_value)" t-att-title="record.id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/> -->
+                                            <div t-if="record.dob.value"><i class="fa fa-calendar"></i> Date of Birth <field name="dob"/> </div>
+                                            <div t-if="record.first_name.value"><strong>First name</strong> <field name="first_name"/> </div>
+                                            <div t-if="record.hobbies.value"><strong>Hobbies</strong><br/><h1> <field name="hobbies"/></h1></div>
+                                            <div t-if="record.status.value"><strong>Status</strong> <field name="status"/> </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!--  kanban ends here -->
+        <record model="ir.actions.act_window" id="emplopyee_act">
+            <field name="name">Employees</field>
+            <field name="res_model">employee.detail</field>
+            <field name="context">{"search_default_status":1, 'default_status':'draft'}</field>
+            <field name="view_mode">kanban,tree,form,pivot</field>
+        </record>
+        
+        <!-- 
+
+
+            'search_default_employee_id': [active_id] ,'default_employee_id': active_id
+         -->
+        <!-- act for enrolled emp -->
+        <record model="ir.actions.act_window" id="emplopyee_enrolled_act">
+            <field name="name">Employees</field>
+            <field name="res_model">employee.detail</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+        <!-- this action will filter records with enrolled employee only -->
+        
+        <!--  -->
+        <record id="view_employee_search" model="ir.ui.view">
+            <field name="name">employee.search</field>
+            <field name="model">employee.detail</field>
+            <field name="arch" type="xml">
+                <search string="Search Employee">
+                    
+                    <filter string="enrolled" name="enrolled" domain="[('status','=','enrolled')]" help="Enrolled Employee help"/>
+                    <filter string="draft" name="draft" domain="[('status','=','draft')]" help="draft Employee help"/>
+                    <field name="first_name" 
+                    filter_domain="['|', '|', ('first_name', 'ilike', self), ('hobbies', 'ilike', self), ('status','ilike', self)]"
+                    string="Module"/>
+<!--                     <field name="first_name" filter_domain="[('first_name', 'ilike', self)]" string="Name"/> -->
+<!--                     <field name="hobbies" filter_domain="[('hobbies', 'ilike', self)]" string="Hobbies"/> -->
+<!--                     <field name="status" filter_domain="[('status', 'ilike', self)]" string="Status"/> -->
+					<field name="alise_name" filter_domain="[('alise_name', 'ilike', self)]" string="Aliase name"/>
+					<field name="short_code" filter_domain="[('short_code', 'like', self)]" string="Short code"/>
+					<field name="guardian_ids" filter_domain="[('guardian_ids.street', 'ilike', self)]" string="Guardian Street"/>
+					<field name="guardian_ids" filter_domain="[('guardian_ids.street2', 'ilike', self)]" string="Guardian Street2"/>
+					<field name="guardian_ids" filter_domain="[('guardian_ids.city', 'ilike', self)]" string="Guardian City"/>
+					<field name="guardian_ids" filter_domain="[('guardian_ids.state', 'ilike', self)]" string="Guardian State"/>
+					<field name="guardian_ids" filter_domain="[('guardian_ids.country', 'ilike', self)]" string="Guardian Country"/>
+					<field name="guardian_ids" filter_domain="[('guardian_ids.zipcode', 'ilike', self)]" string="Guardian Zipcode"/>
+                    <group col='2'>
+                        <filter string="Status" domain="[]" name="Status" context="{'group_by':'status'}" />
+                    </group>
+                <separator/>
+               
+                </search>
+            </field>
+        </record>
+         <record model="ir.actions.act_window" id="emplopyee_search">
+            <field name="name">Employees</field>
+            <field name="view_id" ref="view_employee_search" />
+            <field name="res_model">employee.detail</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_enrolled":1, 'default_status':'draft'}</field>
+        </record>
+        <!--  -->
+        <!-- button action -->
+
+       <record id="employee_certificate_form_view" model="ir.ui.view">
+            <field name="name">employee.certificate</field>
+            <field name="model">employee.certificate</field>
+            <field name="arch" type="xml">
+                <form>
+	                <div class="oe_button_box" name="button_box">
+		                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" >
+		                    <field name="active" widget="boolean_button" options='{"terminology": "archive"}' />
+		                </button>
+	                </div>
+                    <field name="certificate"/>
+                    <field name="c_type"/>
+                    <field name="employee_id" context="{'form_view_ref': 'emppack.employee_form_view_second'}"/>
+                </form>
+            </field>
+        </record>   
+
+
+        
+        <!-- <record id="emp_job_view" model="ir.ui.view">
+            <field name="name">employee.jobposition</field>
+            <field name="model">employee.jobposition</field>
+            <field name="arch" type="xml">
+           
+                    <form>
+                        <sheet>
+                            <group>
+                                
+                                <field name="empname"/>
+                                <field name="sequence"/>
+                                <field name="employee_ids"/>
+                            </group>
+                        </sheet>
+                    </form> 
+              
+            </field>
+        </record> -->
+        <!-- job position start -->
+         <record id="employee_job_position_tree" model="ir.ui.view">
+            <field name="name">employee.jobposition.tree</field>
+            <field name="model">employee.jobposition</field>
+            <field name="arch" type="xml">
+                <tree string="Medium" editable="bottom" delete="true">
+                        <field name="sequence" widget="handle"/>
+                        <field name="job_position_name"/>
+                        <field name = "job_category_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="emplopyee_jobposition_action">
+            <field name="name">JobPosition</field>
+            <field name="res_model">employee.jobposition</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        
+        <!-- job position end -->
+        <!-- Hobbies start   -->
+        <record id="employee_hobbies_tree" model="ir.ui.view">
+            <field name="name">employee.hobby</field>
+            <field name="model">employee.hobby</field>
+            <field name="arch" type="xml">
+                <tree string="Medium" editable="bottom" delete="true">
+                    <field name="is_selected" widget="handle"/>
+                    <field name="name"/>
+                    <field name="h_code" />
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="emplopyee_hobby_action">
+            <field name="name">Hobbies</field>
+            <field name="res_model">employee.hobby</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+       
+        <!-- Hobbies ends   -->
+        
+        <!-- Adding inheritance in field -->
+		
+		<record id="sale_order_line_form_view" model="ir.ui.view">
+            <field name="name">sale.order.line.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']//tree//field[@name='price_subtotal']" position="after">
+                	<field name="is_discount_allow" widget="checkbox"/> 
+                </xpath>
+                <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                	<field name="c_street" />
+                	<field name="c_street2" /> 
+                	<field name="c_city" /> 
+                	<field name="c_state" /> 
+                	<field name="c_country" /> 
+                	<field name="c_zip" />   
+                </xpath>
+            </field>
+        </record>   
+		
+		<record id="res_partner_inherited_form_view" model="ir.ui.view">
+            <field name="name">res.partner.inherited.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang']" position="after">
+                	<field name="is_discount_allow" widget="checkbox"/> 
+                </xpath>
+            </field>
+        </record>
+		
+        <!--  -->
+        
+        
+        
+        
+         <!-- Menu task -->
+        <menuitem
+            name="Main menu"
+            id="main_menu"/>
+        <menuitem name="Configuration" 
+            id="configuration_menu"
+            parent="main_menu"
+            groups="emppack.ceo_group,emppack.main_manager_group"
+            />
+
+        <!-- menu task end -->
+
+        <menuitem
+            name="Employees"
+            id="emp_menu"
+            
+            />
+        <menuitem name="Employee" 
+            action="emplopyee_act"
+            id="emp_s_menu"
+            parent="emp_menu"
+            groups="emppack.ceo_group,emppack.main_manager_group,emppack.supervisor_group"
+        />
+         <menuitem name="Enrolled Employees" 
+            action="emplopyee_search"
+            id="enrolled_emp_menu"
+            parent="emp_menu"
+            
+        />
+        <menuitem name="Certificate" 
+            action="emplopyee_certificate_action"
+            id="employee_certificate_submenu"
+            parent="emp_menu"
+        />
+         <menuitem name="certificate" 
+            action="emplopyee_certificate_action"
+            id="emplopyee_certificate_menuitem"
+            parent="main_menu"
+        />
+        <menuitem name="guardian"
+        	action="guardian_view_action"
+        	id="employee_guardian_menuitem"
+        	parent="emp_menu"
+        />
+        	
+    
+         <menuitem name="Hobbies" 
+            action="emplopyee_hobby_action"
+            id="emplopyee_hobby_menuitem"
+            parent="emp_menu"
+        />
+        <menuitem name="JobPosition" 
+            action="emplopyee_jobposition_action"
+            id="emplopyee_jobposition_menuitem"
+            parent="configuration_menu"
+            groups="emppack.ceo_group,emppack.main_manager_group"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <menuitem
+            name="Widget Menu"
+            id="main_menu"/>
+        <menuitem name="Student" 
+            id="student_menu"
+            parent="main_menu"
+            action="student_action"
+            />
+        <menuitem name="Classroom" 
+            id="classroom_menu"
+            parent="main_menu"
+            action="classroom_action"
+            />
+         <menuitem name="Subjects" 
+            id="subject_menu"
+            parent="main_menu"
+            action="subject_action"
+            />
+         <menuitem name="Hobbies" 
+            id="hobby_menu"
+            parent="main_menu"
+            action="hobby_action"
+            />
+    </data>
+</odoo>

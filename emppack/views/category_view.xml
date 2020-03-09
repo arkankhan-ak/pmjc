@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="category_view" model="ir.ui.view">
+            <field name="name">category.view</field>
+            <field name="model">category.detail</field>
+            <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <field name="wages"/>
+                        </sheet>
+                    </form>
+            </field>
+        </record>
+
+        <!-- tree view -->
+         <record id="category_tree_view" model="ir.ui.view">
+            <field name="name">category.view</field>
+           <field name="model">category.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                        <field name="wages"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- tree view ends -->
+
+        <!--        action for category-->
+         <record model="ir.actions.act_window" id="category_view_action">
+            <field name="name">Category</field>
+            <field name="res_model">category.detail</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        
+
+    </data>
+</odoo>

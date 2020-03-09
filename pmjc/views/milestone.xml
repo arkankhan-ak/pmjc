@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+    <record id="view_milestone_tree" model="ir.ui.view">
+      <field name="name">pmjc.milestone.tree</field>
+      <field name="model">pmjc.milestone</field>
+      <field name="priority">1</field>
+      <field name="arch" type="xml">
+        <tree string="Milestone">
+            <field name="name"/>
+            <field name="start_date"/>
+            <field name="expected_end_date"/>
+            <field name="actual_end_date"/>
+            <field name="amount"/>
+            <field name="approval_date"/>
+            
+            <!-- <field name="invoice_ids"/> -->
+        </tree>
+      </field>
+    </record>
+    <!-- milestone form view -->
+    <record id="view_milestone_form" model="ir.ui.view">
+      <field name="name">pmjc.milestone.form</field>
+      <field name="model">pmjc.milestone</field>
+      <field name="priority">20</field>
+      <field name="arch" type="xml">
+          <form string="Milestone">
+            <sheet>
+              <group>   
+                <group string="Milestone">
+                    <field string="Milestone Name" name="name" />
+                    <field  string="Start Date" name="start_date"/>
+                    <field string=" Expected End Date" name="expected_end_date"/>
+                    <field string="Actual End Date" name="actual_end_date"/>
+                    <field string="Amount " name="amount"/>
+                    <field string="Status " name="status"/>
+                    <field  string="Approval Date" name="approval_date"/>
+
+                </group>
+              </group>
+            </sheet>
+          </form>
+      </field>
+    </record>
+  <!-- Milestone search view -->
+   <record id="view_pmjc_milestone_search" model="ir.ui.view">
+      <field name="name">pmjc.milestonesearch</field>
+      <field name="model">pmjc.milestone</field>
+      <field name="arch" type="xml">
+        <search string="Milestone">
+                    <field name="name" filter_domain="[('name','ilike',self)]" string="Milestone Name"/>
+                    <field name="status" filter_domain="[('status','ilike',self)]" string="Status"/>
+                    <group expand="0" string="Group By">
+                      <filter string="Status" domain="[]" context="{'group_by':'status'}"/>
+                    </group>
+                </search>
+      </field>
+    </record>
+
+
+    <!-- Action for milestone -->
+    <record model="ir.actions.act_window" id="action_view_pmjc_milestone">
+      <field name="name">PMJC Milestone</field>
+      <field name="res_model">pmjc.milestone</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{'search_default_status':'notinvoiced'} </field>
+    </record>
+
+    <!-- Menu item for Milestone -->
+    <menuitem id="pmjc_milestone_menu" parent="main_menu" name="Milestone" 
+          action="action_view_pmjc_milestone" sequence="2"/>
+    </data>
+</odoo>

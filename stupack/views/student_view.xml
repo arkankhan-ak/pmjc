@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- form creation for student model -->
+        <record id="student_view" model="ir.ui.view">
+            <field name="name">student.view</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="marks" />
+                            <field name="gender" widget="radio"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- form ends here -->
+        
+        <record id="student_tree_view" model="ir.ui.view">
+            <field name="name">student.student</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+                <tree string="Medium">
+                    <field name="name"/>
+                    <field name="marks"/>
+                    <field name="gender"/>
+                    
+                </tree>
+            </field>    
+        </record>
+       
+
+        
+
+        
+        <!-- action creation for student -->
+        <record id="student_action" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="res_model">student.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- action ends here -->
+
+        <!-- menu for student -->
+        <menuitem name="Students" id="student_menu" />
+        <menuitem name="Student" parent="student_menu" id="student_s" action="student_action" />
+        
+        <!-- menu ends here -->
+    </data>
+</odoo>
